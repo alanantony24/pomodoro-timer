@@ -1,1 +1,63 @@
 /*CSS goes here*/
+body {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #d8554d;
+}
+
+.container {
+    color: white;
+    background-color: #d96f68;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 50px;
+}
+
+.toggleTimer {
+    display: flex;
+    justify-content: center;
+}
+
+.tabs {
+    font-size: 16px;
+    text-align: center;
+    padding: 12px;
+    margin: 15px;
+    background-color: #d8554d;
+    color: white;
+    border-color: transparent;
+    border-radius: 6px;
+}
+
+.timerText {
+    display: flex;
+    justify-content: center;
+    font-size: 120px;
+}
+
+.controlBtns {
+    display: flex;
+    justify-content: center;
+}
+
+.toggleStartPause {
+    font-size: 16px;
+    text-align: center;
+    padding: 12px;
+    margin-right: 15px;
+    border-radius: 4px;
+    background-color: white;
+    color: #d8554d;
+    border-color: transparent;
+    box-shadow: rgb(235, 235, 235) 0px 6px 0px 0px;
+}
+
+.resetBtn {
+    font-size: 16px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: white;
+    color: #d8554d;
+    border-color: transparent;
+    box-shadow: rgb(235, 235, 235) 0px 6px 0px 0px;
+}
