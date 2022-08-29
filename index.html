@@ -14,19 +14,19 @@
         <!--Another container to hold all the tab buttons-->
         <div class="toggleTimer">
             <!--Tab Buttons-->
-            <button class="tabs">Pomodoro</button>
-            <button class="tabs">Short Break</button>
-            <button class="tabs">Long Break</button>
+            <button class="tabs" onclick="PomodoroMins()">Pomodoro</button>
+            <button class="tabs" onclick="ShortBreakMins()">Short Break</button>
+            <button class="tabs" onclick="LongBreakMins()">Long Break</button>
         </div>
         <!--A container to hold the main timer text-->
         <div>
-            <h1 class="timerText">25:00</h1>
+            <h1 id="timerText"></h1>
         </div>
         <!--Another container to hold all the control buttons-->
         <div class="controlBtns">
             <!--Control Buttons-->
-            <button class="toggleStartPause">Start</button>
-            <button class="resetBtn">Reset</button>
+            <button class="toggleStartPause" onclick="Start()">Start</button>
+            <button class="resetBtn" onclick="Reset()">Reset</button>
         </div>
     </div>
     <!--Added the script tag at end of body to fully render HTML-->
