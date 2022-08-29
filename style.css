@@ -44,7 +44,7 @@ body {
     padding: 15px;
 }
 
-.timerText {
+#timerText {
     /*Change display type of timer text to flex and center the element in the container*/
     display: flex;
     justify-content: center;
