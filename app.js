@@ -18,9 +18,14 @@ var formattedseconds = ("0" + seconds).slice(-2);
 
 document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
 
+var resetMins = 25
+var resetSeconds = 0
+
 function PomodoroMins() {
     mins = 25
     seconds = 0
+    resetMins = 25
+    resetSeconds = 0
     var formattedseconds = ("0" + seconds).slice(-2);
     document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
 }
@@ -28,6 +33,8 @@ function PomodoroMins() {
 function ShortBreakMins() {
     mins = 5
     seconds = 0
+    resetMins = 5
+    resetSeconds = 0
     var formattedseconds = ("0" + seconds).slice(-2);
     document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
 }
@@ -35,6 +42,8 @@ function ShortBreakMins() {
 function LongBreakMins() {
     mins = 15
     seconds = 0
+    resetMins = 15
+    resetSeconds = 0
     var formattedseconds = ("0" + seconds).slice(-2);
     document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
 }
@@ -77,7 +86,5 @@ function Start() {
 
 function Reset() {
     clearInterval(interval);
-    mins = 25
-    seconds = 0
-    document.getElementById("timerText").innerHTML = mins + ":" + ("0" + seconds).slice(-2);
+    document.getElementById("timerText").innerHTML = resetMins + ":" + ("0" + resetSeconds).slice(-2);
 }
