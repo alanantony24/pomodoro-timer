@@ -44,6 +44,7 @@ function Start() {
     if (!start) {
         start = true
         document.getElementsByClassName("toggleStartPause")[0].textContent = "Pause"
+        document.getElementById("reset").disabled = true;
         interval = setInterval(function () {
 
             if (!seconds) {
@@ -67,6 +68,7 @@ function Start() {
     } else {
         clearTimeout(interval)
         start = false
+        document.getElementById("reset").disabled = false;
         document.getElementsByClassName("toggleStartPause")[0].textContent = "Start"
         document.getElementById("timerText").innerHTML = remainingMins + ":" + ("0" + remainingSeconds).slice(-2);
     }
