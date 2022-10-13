@@ -12,40 +12,41 @@ const timer = {
 var start = false
 var mins = 25
 var seconds = 0
-var formattedseconds = ("0" + seconds).slice(-2);
 
 // Setup
 UpdateResetTime();
+UpdateTimeDisplay();
 document.getElementById("resetBtn").disabled = true;
-document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
 
 function PomodoroMins() {
     mins = 25
     seconds = 0
     UpdateResetTime();
-    var formattedseconds = ("0" + seconds).slice(-2);
-    document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
+    UpdateTimeDisplay();
 }
 
 function ShortBreakMins() {
     mins = 5
     seconds = 0
     UpdateResetTime();
-    var formattedseconds = ("0" + seconds).slice(-2);
-    document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
+    UpdateTimeDisplay();
 }
 
 function LongBreakMins() {
     mins = 15
     seconds = 0
     UpdateResetTime();
-    var formattedseconds = ("0" + seconds).slice(-2);
-    document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
+    UpdateTimeDisplay();
 }
 
 function UpdateResetTime() {
     resetMins = mins;
     resetSeconds = seconds;
+}
+
+function UpdateTimeDisplay() {
+    formattedseconds = ("0" + seconds).slice(-2);
+    document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
 }
 
 function Start() {
@@ -69,24 +70,20 @@ function Start() {
                 }
             }
             seconds--;
-            var formattedseconds = ("0" + seconds).slice(-2);
-            document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
-            remainingMins = mins
-            remainingSeconds = seconds
+            UpdateTimeDisplay();
         }, 1000)
     } else {
         clearTimeout(interval)
         start = false
         document.getElementById("resetBtn").disabled = false;
         document.getElementsByClassName("toggleStartPause")[0].textContent = "Start"
-        document.getElementById("timerText").innerHTML = remainingMins + ":" + ("0" + remainingSeconds).slice(-2);
+        UpdateTimeDisplay();
     }
-
 }
 
 function Reset() {
     clearInterval(interval);
     mins = resetMins;
     seconds = resetSeconds;
-    document.getElementById("timerText").innerHTML = mins + ":" + ("0" + seconds).slice(-2);
+    UpdateTimeDisplay();
 }
