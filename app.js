@@ -54,7 +54,7 @@ function Start() {
     //document.getElementsByClassName("toggleStartPause")[0].textContent = "Pause"
     if (!start) {
         start = true
-        document.getElementsByClassName("toggleStartPause")[0].textContent = "Pause"
+        document.getElementById("StartPauseBtn").textContent = "Pause"
         document.getElementById("resetBtn").disabled = true;
         interval = setInterval(function () {
 
@@ -77,7 +77,7 @@ function Start() {
         clearTimeout(interval)
         start = false
         document.getElementById("resetBtn").disabled = false;
-        document.getElementsByClassName("toggleStartPause")[0].textContent = "Start"
+        document.getElementById("StartPauseBtn").textContent = "Start"
         UpdateTimeDisplay();
     }
 }
