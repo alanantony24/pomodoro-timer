@@ -48,6 +48,12 @@ function LongBreakMins() {
     document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
 }
 
+// Extra
+function CustomMins() {
+    mins = document.getElementById("minsInput").value;
+    document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
+}
+
 function Start() {
     //document.getElementsByClassName("toggleStartPause")[0].textContent = "Pause"
     if (!start) {
