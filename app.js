@@ -6,6 +6,7 @@ const timer = {
     shortBreak: 5,
     longBreak: 15,
     longBreakInterval: 4,
+    seconds: 0
 };
 
 //Start
@@ -19,22 +20,22 @@ UpdateTimeDisplay();
 document.getElementById("resetBtn").disabled = true;
 
 function PomodoroMins() {
-    mins = 25
-    seconds = 0
+    mins = timer.pomodoro;
+    seconds = timer.seconds;
     UpdateResetTime();
     UpdateTimeDisplay();
 }
 
 function ShortBreakMins() {
-    mins = 5
-    seconds = 0
+    mins = timer.shortBreak;
+    seconds = timer.seconds;
     UpdateResetTime();
     UpdateTimeDisplay();
 }
 
 function LongBreakMins() {
-    mins = 15
-    seconds = 0
+    mins = timer.longBreak;
+    seconds = timer.seconds;
     UpdateResetTime();
     UpdateTimeDisplay();
 }
