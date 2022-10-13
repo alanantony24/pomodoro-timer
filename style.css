@@ -20,7 +20,7 @@ body {
     margin: 150px auto;
 }
 
-.toggleTimer {
+.timerButtons {
     /*Change display type to flex and center the div and it's children*/
     display: flex;
     justify-content: center;
@@ -63,7 +63,7 @@ body {
     padding: 20px;
 }
 
-#StartPauseBtn, #resetBtn {
+#toggleBtn, #resetBtn {
     /*Font styling*/
     font-size: 16px;
     font-weight: bold;

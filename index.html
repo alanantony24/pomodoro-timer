@@ -12,11 +12,11 @@
     <!--Main Container to hold all the children-->
     <div class="container">
         <!--Another container to hold all the tab buttons-->
-        <div class="toggleTimer">
+        <div class="timerButtons">
             <!--Tab Buttons-->
-            <button class="tabs" onclick="PomodoroMins()">Pomodoro</button>
-            <button class="tabs" onclick="ShortBreakMins()">Short Break</button>
-            <button class="tabs" onclick="LongBreakMins()">Long Break</button>
+            <button class="tabs" onclick="Onclick_PomodoroBtn()">Pomodoro</button>
+            <button class="tabs" onclick="Onclick_ShortBreakBtn()">Short Break</button>
+            <button class="tabs" onclick="Onclick_LongBreakBtn()">Long Break</button>
         </div>
         <!--A container to hold the main timer text-->
         <div>
@@ -25,7 +25,7 @@
         <!--Another container to hold all the control buttons-->
         <div class="controlBtns">
             <!--Control Buttons-->
-            <button id="StartPauseBtn" onclick="Start()">Start</button>
+            <button id="toggleBtn" onclick="ToggleTimer()">Start</button>
             <button id="resetBtn" onclick="Reset()">Reset</button>
         </div>
     </div>
