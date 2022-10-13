@@ -10,22 +10,19 @@ const timer = {
 
 //Start
 var start = false
-var remainingMins = 0
-var remainingSeconds = 0
 var mins = 25
 var seconds = 0
 var formattedseconds = ("0" + seconds).slice(-2);
 
+// Setup
+UpdateResetTime();
+document.getElementById("resetBtn").disabled = true;
 document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
-
-var resetMins = 25
-var resetSeconds = 0
 
 function PomodoroMins() {
     mins = 25
     seconds = 0
-    resetMins = 25
-    resetSeconds = 0
+    UpdateResetTime();
     var formattedseconds = ("0" + seconds).slice(-2);
     document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
 }
@@ -33,8 +30,7 @@ function PomodoroMins() {
 function ShortBreakMins() {
     mins = 5
     seconds = 0
-    resetMins = 5
-    resetSeconds = 0
+    UpdateResetTime();
     var formattedseconds = ("0" + seconds).slice(-2);
     document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
 }
@@ -42,10 +38,14 @@ function ShortBreakMins() {
 function LongBreakMins() {
     mins = 15
     seconds = 0
-    resetMins = 15
-    resetSeconds = 0
+    UpdateResetTime();
     var formattedseconds = ("0" + seconds).slice(-2);
     document.getElementById("timerText").innerHTML = mins + ":" + formattedseconds;
+}
+
+function UpdateResetTime() {
+    resetMins = mins;
+    resetSeconds = seconds;
 }
 
 function Start() {
@@ -53,7 +53,7 @@ function Start() {
     if (!start) {
         start = true
         document.getElementsByClassName("toggleStartPause")[0].textContent = "Pause"
-        document.getElementById("reset").disabled = true;
+        document.getElementById("resetBtn").disabled = true;
         interval = setInterval(function () {
 
             if (!seconds) {
@@ -77,7 +77,7 @@ function Start() {
     } else {
         clearTimeout(interval)
         start = false
-        document.getElementById("reset").disabled = false;
+        document.getElementById("resetBtn").disabled = false;
         document.getElementsByClassName("toggleStartPause")[0].textContent = "Start"
         document.getElementById("timerText").innerHTML = remainingMins + ":" + ("0" + remainingSeconds).slice(-2);
     }
@@ -86,5 +86,7 @@ function Start() {
 
 function Reset() {
     clearInterval(interval);
-    document.getElementById("timerText").innerHTML = resetMins + ":" + ("0" + resetSeconds).slice(-2);
+    mins = resetMins;
+    seconds = resetSeconds;
+    document.getElementById("timerText").innerHTML = mins + ":" + ("0" + seconds).slice(-2);
 }

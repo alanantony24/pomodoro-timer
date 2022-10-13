@@ -63,7 +63,7 @@ body {
     padding: 20px;
 }
 
-.toggleStartPause, .resetBtn {
+.toggleStartPause, #resetBtn {
     /*Font styling*/
     font-size: 16px;
     font-weight: bold;
@@ -79,4 +79,9 @@ body {
     /*10px margin from all sides and 15px padding from all sides to make buttons bigger*/
     margin: 10px;
     padding: 15px;
+}
+
+#resetBtn[disabled]
+{
+    background-color: #500001;
 }
